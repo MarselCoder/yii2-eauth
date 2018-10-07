@@ -10,7 +10,11 @@
 namespace nodge\eauth;
 
 use Yii;
-use yii\base\BaseObject;
+if(version_compare(Yii::getVersion(), '2.0.13', '<=')){
+  use yii\base\Object as BaseObject;
+}else{
+  use yii\base\BaseObject;
+}
 use yii\helpers\Url;
 use yii\helpers\ArrayHelper;
 use OAuth\Common\Http\Uri\Uri;
